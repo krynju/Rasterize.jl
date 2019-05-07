@@ -1,0 +1,7 @@
+name = "Rasterize"
+uuid = "155e16de-70da-11e9-2857-0366292b14be"
+authors = ["Krystian Gulinski <gulinski.krystian@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
