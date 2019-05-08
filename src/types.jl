@@ -1,3 +1,3 @@
 struct Triangle
-    vertices::SMatrix{2, 3, Float32}
+    vertices::SMatrix{3, 3, Float32}
 end # struct Triangle
