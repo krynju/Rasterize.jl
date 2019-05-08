@@ -25,7 +25,7 @@ function run_benchmark()
 end # function run_benchmark
 
 function prepare_arguments()
-    t = Triangle([[20, 20, 0]; [40, 10, 0]; [50, 50, 0]])
+    t = Triangle([Vertex(20, 20, 0); Vertex(40, 10, 0); Vertex(50, 50, 0)])
     output = @MMatrix zeros(UInt32, 64, 64)
     return (output, t)
 end # function prepare_arguments
@@ -36,12 +36,12 @@ function rasterize!(output::MMatrix{64, 64, UInt32}, t::Triangle)
     p2 = 0.0f0
 
 
-
-    tv21 = t.vertices[2,1]
-    tv12 = t.vertices[1,2]
-    tv22 = t.vertices[2,2]
-    tv13 = t.vertices[1,3]
-    tv23 = t.vertices[2,3]
+    tv11 = t.vertices[1].x
+    tv21 = t.vertices[1].y
+    tv12 = t.vertices[2].x
+    tv22 = t.vertices[2].y
+    tv13 = t.vertices[3].x
+    tv23 = t.vertices[3].y
 
     @inbounds for i in 1:size(output)[1]
         p1 += 1.0f0
